@@ -104,8 +104,6 @@ class Lyrics():
                 lyrics += i+"\n"
             test.write(lyrics)
 
-        
-
 def write_lyrics_from_url(url,path=None,full_lyrics=False):
     lyrics = Lyrics(url)
     lyrics.get_unique_verses()
@@ -116,6 +114,4 @@ def write_lyrics_from_url(url,path=None,full_lyrics=False):
         lyrics.write_reduced_song()
     if full_lyrics:
         lyrics.write_full_lyrics()
-url = 'https://www.letras.mus.br/padre-marcelo-rossi/47896/'
-
-write_lyrics_from_url(url,full_lyrics=True)
+    return lyrics
