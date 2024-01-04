@@ -1,18 +1,30 @@
 # LyricsReducer
 
-## Guia para implementação
+Minha solução para a etapa de Projeto Prático de processo seletivo Acelera ZG 5.0. Há um script específico para compressão da música disponibilizada pelo desafio (erguei_as_maos.py)
 
-### 1. Criar um parser para extrair estrofes de uma música a partir de uma URL:
-   - Armazenar em uma lista chamada 'full_song';
-   - Cada estrofe será uma lista contendo cada verso em ordem.
+LyricsReducer é uma simples ferramenta de CLI em Python capaz de reduzir a redundância em letras de músicas e armazena-la em um arquivo .json, que pode ser lido parcialmente ou completo
 
-### 2. Verificar versos únicos:
-   + **Variáveis:**
-     - `full_song`: List[List[str]]
-         - Exemplo: `full_song[1][2]` = verso 3 da estrofe 2
-     - `unique_verses`: List[str]
+## Prerequisitos
 
-### 3. Hash table:
-   - Criar uma hashtable de versos e comentários
-   - Codificar a música usando a hash table
-   - Reproduzir pelo Reader
+- Python3.9+
+
+### Instalação
+
+Basta criar um ambiente virtual e instalar as dependências listadas no arquivo requirements.txt
+
+```sh
+git clone git@github.com:artpedro/aczg-ps.git
+
+python -m venv venv
+source ./venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+## Usage
+
+O uso da ferramenta é através do LyricsReducer.sh ou diretamente através do script lyrics_reader:
+
+```sh
+./LyricsReducer.sh
+```
