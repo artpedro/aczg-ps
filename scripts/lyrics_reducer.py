@@ -88,6 +88,8 @@ class Lyrics():
                                 current.append(self.inverse_hash[comment])
             self.song_code.append(current)
     def write_reduced_song(self, path=os.path.join(".","songs")):
+        if not os.path.exists(path):
+            os.mkdir(path)
         filename = os.path.join(path,f"{self.song_title.replace(' ','_')}.json")
         with open(filename,'w') as file:
             data = {
@@ -98,6 +100,8 @@ class Lyrics():
         print("Lyrics armazenadas em " + filename)
 
     def write_full_lyrics(self, path=os.path.join(".","songs")):
+        if not os.path.exists(path):
+            os.mkdir(path)
         filename = os.path.join(path,f"{self.song_title.replace(' ','_')}.txt")
         with open(filename,'w') as test:
             lyrics = ''
