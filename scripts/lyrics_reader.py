@@ -95,6 +95,9 @@ if __name__ == '__main__':
             reader(obj = lyrics)
         elif choice.upper() == 'FOLDER':
             path = os.path.join(".","songs","")
+            if not os.path.exists(path):
+                print_name()
+                print("Pasta vazia")
             songs = {index:name for index,name in enumerate(os.listdir(path))}
             print(songs)
             print()
