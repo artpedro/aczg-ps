@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python ./lyrics_reader.py
+python scripts/lyrics_reader.py
