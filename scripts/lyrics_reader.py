@@ -44,7 +44,8 @@ def reader(obj=None,name=None):
             song_code = obj.song_code
             all_verses_count = obj.verse_count
         if name:
-            with open(f"./songs/{name}",'r') as song:
+            path = os.path.join(".","songs",name)
+            with open(path,'r') as song:
                 info = json.load(song)
                 song_hash = info['hash']
                 song_code = info['code']
@@ -93,10 +94,11 @@ if __name__ == '__main__':
                 raise(ValueError("Invalid URL"))
             reader(obj = lyrics)
         elif choice.upper() == 'FOLDER':
-            songs = {index:name for index,name in enumerate(os.listdir('./songs'))}
+            path = os.path.join(".","songs","")
+            songs = {index:name for index,name in enumerate(os.listdir(path))}
             print(songs)
             print()
-            print([str(index)+f" - {name[:len(name)-5]}" for index,name in enumerate(os.listdir('./songs'))])
+            print([str(index)+f" - {name[:len(name)-5]}" for index,name in enumerate(os.listdir(path))])
             print()
             print_name()
             number = int(input("What song do you want?\n"))

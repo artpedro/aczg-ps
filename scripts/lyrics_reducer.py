@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import os
         
 def extract_comments(verse):
     """
@@ -86,8 +87,8 @@ class Lyrics():
                             else:
                                 current.append(self.inverse_hash[comment])
             self.song_code.append(current)
-    def write_reduced_song(self, path='./songs'):
-        filename = f"{path}/{self.song_title.replace(' ','_')}.json"
+    def write_reduced_song(self, path=os.path.join(".","songs")):
+        filename = os.path.join(path,f"{self.song_title.replace(' ','_')}.json")
         with open(filename,'w') as file:
             data = {
                 "hash":self.hash_table,
@@ -96,8 +97,8 @@ class Lyrics():
             json.dump(data,file,indent=0)
         print("Lyrics armazenadas em " + filename)
 
-    def write_full_lyrics(self, path='./songs'):
-        filename = f"{path}/{self.song_title.replace(' ','_')}.txt"
+    def write_full_lyrics(self, path=os.path.join(".","songs")):
+        filename = os.path.join(path,f"{self.song_title.replace(' ','_')}.txt")
         with open(filename,'w') as test:
             lyrics = ''
             for i in self.all_verses:
