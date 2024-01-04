@@ -98,6 +98,7 @@ if __name__ == '__main__':
             if not os.path.exists(path):
                 print_name()
                 print("Pasta vazia")
+                continue
             songs = {index:name for index,name in enumerate(os.listdir(path))}
             print(songs)
             print()
