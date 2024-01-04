@@ -95,7 +95,7 @@ if __name__ == '__main__':
             reader(obj = lyrics)
         elif choice.upper() == 'FOLDER':
             path = os.path.join(".","songs","")
-            if not os.path.exists(path):
+            if (not os.path.exists(path)) or (len(os.listdir('/your/path')) == 0):
                 print_name()
                 print("Pasta vazia")
                 continue
